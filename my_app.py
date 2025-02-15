@@ -13,7 +13,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn import metrics
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-import pickle
+# import pickle
 import plotly.graph_objects as go
 
 st.set_page_config(
@@ -341,20 +341,20 @@ if(file!=None):
         st.write(f"R² Score: {r2:.4f}")
         st.write(f"Mean Squared Error: {mse:.4f}")
         st.write(f"Mean Absolute Error: {mae:.4f}")
-        pickle_linear = st.button("Pickle File")
-
+        
+        # pickle_linear = st.button("Pickle File")
         # if(pickle_linear == True):
-        linear_model_pkl_file = "linear_model.pkl"
-        with open(linear_model_pkl_file, 'wb') as file:
-                pickle.dump(lg, file)
-                st.info("Model Successfully Pickled and saved in your System")
-        with open(linear_model_pkl_file, "rb") as file:
-            st.download_button(
-            label="Download Pickle File",
-            data=file,
-            file_name="linear_model.pkl",
-            mime="application/octet-stream"
-        )
+        # linear_model_pkl_file = "linear_model.pkl"
+        # with open(linear_model_pkl_file, 'wb') as file:
+        #         pickle.dump(lg, file)
+        #         st.info("Model Successfully Pickled and saved in your System")
+        # with open(linear_model_pkl_file, "rb") as file:
+        #     st.download_button(
+        #     label="Download Pickle File",
+        #     data=file,
+        #     file_name="linear_model.pkl",
+        #     mime="application/octet-stream"
+        # )
 
         st.write("Apply Logistic Regression")
         logistic = st.button("Apply", key="Apply Logistic Regression")
@@ -368,16 +368,16 @@ if(file!=None):
         cnf_matrix = metrics.confusion_matrix(y_test, predicted)
         st.write("Accuracy of the model is : ", metrics.accuracy_score(y_test, predicted) * 100)
             
-        pickle_logistic = st.button("Pickle File")
+        # pickle_logistic = st.button("Pickle File")
         # if(pickle_logistic == True):
-        logistic_model_pkl_file = "model.pkl"
-        with open(logistic_model_pkl_file, 'wb') as file1:
-                pickle.dump(logerg, file1)
-                st.info("Model Successfully Pickled and saved in your System")
-        with open(logistic_model_pkl_file, "rb") as file1:
-            st.download_button(
-            label="Download Pickle File",
-            data=file1,
-            file_name="logistic_model.pkl",
-            mime="application/octet-stream"
-        )          
+        # logistic_model_pkl_file = "ligistic_model.pkl"
+        # with open(logistic_model_pkl_file, 'wb') as file1:
+        #         pickle.dump(logerg, file1)
+        #         st.info("Model Successfully Pickled and saved in your System")
+        # with open(logistic_model_pkl_file, "rb") as file1:
+        #     st.download_button(
+        #     label="Download Pickle File",
+        #     data=file1,
+        #     file_name="logistic_model.pkl",
+        #     mime="application/octet-stream"
+        # )          
